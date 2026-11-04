@@ -16,20 +16,50 @@
     </nav>
     <main>
         <form action="" method="post">
-            名前：<input type="text" name="formnane" id=""><br>
+            名前：<input type="text" name="formnane" id="formnane"><br>
             年齢：<input type="text" name="" id="formnenrei"><br>
             性別：<input type="radio" name="formSeibetu" id="" value="男">男
-                    <input type="radio" name="formSeibetu" id="" value="女">女
-                    <input type="radio" name="formSeibetu" id="" value="答えたくない">答えたくない
+            <input type="radio" name="formSeibetu" id="" value="女">女
+            <input type="radio" name="formSeibetu" id="" value="答えたくない">答えたくない
             好きな食べ物：<br>
-                    <input type="checkbox" name="checkboxsusi" id="">すし
-                    <input type="checkbox" name="checkboxyakuniku" id="">焼肉
-                    <input type="checkbox" name="checkboxkare-" id="">カレー
-                    <input type="checkbox" name="checkboxsui-tu" id="">スイーツ
+            <input type="checkbox" name="checkboxsusi" id="">すし
+            <input type="checkbox" name="checkboxyakuniku" id="">焼肉
+            <input type="checkbox" name="checkboxkare-" id="">カレー
+            <input type="checkbox" name="checkboxsui-tu" id="">スイーツ
             <br>
+            </script>
+            <!-- <script name="" id="">
+                <option value="国語">国語</option>
+                <option value="数学">数学</option>
+                <option value="英語">英語</option>
+                <option value="理科">理科</option>
+            </script> -->
 
+            <!-- テキストボックス:<input type="text" >
+ラジオボタン: <input type="radio" >
+チェックボックス: <input type="checkbox" > 
+プルダウンメニュ：<select>><option></select>name とidで名前を付ける　-->
 
-            <input type="submit" value="送信">
+            <script>
+                function formCheck() {
+                    var item = document.form[0].elemnts['formname'].value;
+                    alert(item);
+                    if(item=="");
+                    alert("名前がありません");
+                }
+                //年齢
+                var nenrei = document.forms[0].elements["formnenrei"].value;
+                // alert(nenrei);
+                if(nenrei <0 ){
+                    alert("年齢がマイナスになっています");   
+                }
+                if(nenrei >=100){
+                    alert("年齢が大きすぎます");
+
+                }
+            </script>
+
+            <input type="submit" value="送信" onclick="formCheck()">
             <input type="reset" value="取消">
         </form>
 
@@ -38,6 +68,6 @@
         フッター
     </footer>
 
-</body>
+</body >
 
-</html>
+</html >
