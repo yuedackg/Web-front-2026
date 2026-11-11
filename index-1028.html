@@ -44,16 +44,16 @@
                 function formCheck() {
                     var item = document.form[0].elemnts['formname'].value;
                     alert(item);
-                    if(item=="");
+                    if (item == "");
                     alert("名前がありません");
                 }
                 //年齢
                 var nenrei = document.forms[0].elements["formnenrei"].value;
                 // alert(nenrei);
-                if(nenrei <0 ){
-                    alert("年齢がマイナスになっています");   
+                if (nenrei < 0) {
+                    alert("年齢がマイナスになっています");
                 }
-                if(nenrei >=100){
+                if (nenrei >= 100) {
                     alert("年齢が大きすぎます");
 
                 }
@@ -62,12 +62,32 @@
             <input type="submit" value="送信" onclick="formCheck()">
             <input type="reset" value="取消">
         </form>
-
+        <script>
+            function check(){
+                var item = document.forms[1].elements["formnenrei"].value;
+                alert(item);
+                if( item < 20 && item >= 10){
+                    alert("10代です。");
+                    return true;
+                }
+                alert("年齢が間違えています。");
+                return true;
+            }
+        </script>
+        <form action="#" method="get">
+            年齢が１０代かどうかチェックする。<br>
+            <br>
+            年齢：
+            <input type="text" name="formnenrei"><br>
+            <br>
+            <input type="submit" value="送信" onclick="return check()">
+            <input type="reset" value="リセット">
+        </form>
     </main>
     <footer>
         フッター
     </footer>
 
-</body >
+</body>
 
-</html >
+</html>
