@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        ヘッダー
+    </header>
+    <nav>
+        ナビゲーション
+    </nav>
+    <main>
+        <!-- method="post" は入力データをURLの中に埋め込まないために使用される。-->
+        <form action="" method="get">
+            名前：  <input type="text" name="formName" id="formName"><br>
+            年齢：  <input type="text" name="formNenrei" id="" ><br>
+            <!-- ラジオボタンのように複数の中から一つを選ぶときには、nameを同じにする -->
+            性別：  <input type="radio" name="formSeibetu" id="" value="男" >男
+                    <input type="radio" name="formSeibetu" id="" value="女" >女 <br>
+                    <input type="radio" name="formSeibetu" id="" value="答えたくない">答えたくない
+            好きな食べ物：<br>
+                    <input type="checkbox" name="checkboxSusi" id="">すし
+                    <input type="checkbox" name="checkboxYakiniku" id="">やきにく
+                    <input type="checkbox" name="" id="">カレー
+                    <input type="checkbox" name="" id="">スイーツ
+            <br>
+            <select name="" id="">
+                <option value="">国語</option>
+                <option value="">数学</option>
+                <option value="">英語</option>
+                <option value="">理科</option>
+            </select>
+            <!-- 
+            テキストボックス　：　<input type="text">
+            ラジオボタン：　　　　<input type="radio">
+            チェックボックス：　 <input type="checkbox">
+
+            プルダウンメニュー： <select><option></select>
+            name と　idで名前を付ける（値を取り出すため）
+             -->
+
+            <!-- JavaScriptのプログラムの始まり -->
+            <script>    
+                function formCheck(){   // function は機能の集まりを書く
+                                        // 内容は{}の間に書く
+                    // nameが"formName"（テキストボックス）のデータを取り出す。
+                    var item = document.forms[0].elements['formName'].value;
+                    // alert( item );
+                    if ( item == "" ){
+                        alert( "なまえがありません");
+                    }
+                    // 年齢
+                    var nenrei = document.forms[0].elements["formNenrei"].value;
+                    // alert( nenrei);
+                    if( nenrei < 0 ){
+                        alert( "年齢がマイナスになっています");
+                    }
+                    if ( nenrei >= 100){
+                        alert( "年齢が大きすぎます");
+                    }
+                    // 参考
+                    if( nenrei < 0  || nenrei >= 100 ){
+                        alert( "年齢に誤りがあります");
+                    }
+                }
+            </script>
+            <!-- フォームに入力された文字列を送信するボタン -->
+            <!-- ボタンがクリックされたら、formCheck() -->
+            <input type="submit" value="送信" onclick="formCheck()"> 
+            <!-- フォームに入力された文字列などを消去するボタン -->
+            <input type="reset" value="取消">
+        </form>
+
+        <form action="">
+
+        </form>
+      
+    </main>
+    <footer>
+        フッター
+    </footer>
+</body>
+
+</html>
