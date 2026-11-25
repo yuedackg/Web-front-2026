@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            /* displayは表示（block）と非表示(none)を切り替える */
+            display: none;
+        }
+
+    </style>
+    <script>
+        function chck(){
+            var item = document.forms[0].elements['txtname'].value;
+            if("" === item){
+            //error message
+            //step.1 見えないボックスを選にする
+            var target = document.getElementById('errorName');
+            //step.2 cssの属性displayをblockにする    
+            target.style.display = "block";
+            //step.3 画面移動させない
+            return false;
+
+            }else{
+
+            }
+            //年齢に関するチェック
+            var age = document.forms[0].elements['txtAge'].value;
+            if(age ===""){
+                var target2 = document.getElementById('change');
+                target2.style.display = "block";
+            return true;
+            }
+            if(0<age && age < 100){
+
+            }
+            return true;
+            
+        } 
+    </script>
+</head>
+<body>
+    <h1>form sample </h1>
+    <form action="#" method="post">
+        name:
+        <input type="text" name="txtName" id="">
+        <span id="errorName">* text is null, enter your name.</span>
+
+        <br>
+        <br>
+        age:
+        <input type="text" name="txtAge" id="">
+        <!-- 下の文字ををdiv要素で書くと、レイアウト要素となり、改行される -->
+        <span id="change">* text is null, 年齢を入れてください。</span>
+
+        <br>
+        <br>
+        <input type="submit" value="送信" onclick="return chck();">
+    </form>
+</body>
+</html>
